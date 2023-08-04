@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--NOTE-For create a xml file easy way to goto testcases folder or testcase class and right click goto TestNG and select "convert to testng" -->
+
+<suite name="OpencartSuite">
+
+<listeners>
+     <listener class-name="utilities.ExtentReportManager"></listener>
+</listeners>
+
+
+  <test thread-count="5" name="OpencartTest">
+  <parameter name="browser" value="chrome"></parameter>  
+  
+  <groups>
+         <run>
+              <include name="Master"></include>
+       <!--   <include name="Regression"></include>
+              <include name="Sanity"></include>
+              
+              <exclude name="Master"></exclude>
+              <exclude name="Regression"></exclude>
+              <exclude name="Sanity"></exclude> -->
+         </run> 
+  </groups>
+  
+   
+    <classes>
+          <class name="testCases.TC_001_AccountRegistrationTest"/> 
+          <class name="testCases.TC_002_LoginTest"></class>    
+    </classes>
+  </test> <!-- OpencartTest -->
+</suite> <!-- OpencartSuite -->
